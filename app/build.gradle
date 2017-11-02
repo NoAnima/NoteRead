@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "runix.noteread"
         minSdkVersion 15
@@ -24,8 +24,16 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    // jsoup 爬html数据
+
+    // Add the annotation processor if you are using Epoxy's annotations (recommended)
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.bumptech.glide:glide:4.2.0'
+    compile 'org.jsoup:jsoup:1.10.3'
+    compile 'com.airbnb.android:epoxy:2.5.1'
     testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.airbnb.android:epoxy-processor:2.5.1'
 }
